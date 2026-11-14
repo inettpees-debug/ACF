@@ -1,0 +1,228 @@
+@import "./tokens.css";
+@import "./layout.css";
+@import "./home.css";
+@import "./task.css";
+
+/* ---------------------------------------------------------------------------
+   Base — reset, typography, focus, motion helpers, shared controls.
+   Neo-Swiss Financial Terminal: dark canvas, off-white type, amber signal.
+--------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* The Boardroom panel spans 100vw; clip (not hidden) swallows the
+     scrollbar-width overhang without breaking the sticky nav. */
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--step-body);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: var(--step-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: var(--step-h2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-canvas);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 3px;
+}
+
+/* Numbers align: mandatory tabular figures on all mono/numeric text */
+.num,
+.mono,
+code,
+kbd,
+samp {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Motion layer ------------------------------------------------------- */
+
+.enter {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--move-ms) var(--ease-out),
+    transform var(--move-ms) var(--ease-out);
+}
+
+.enter.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.enter:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.enter:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.enter:nth-child(4) {
+  transition-delay: 210ms;
+}
+
+.enter:nth-child(5) {
+  transition-delay: 280ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .enter {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Shared pieces --------------------------------------------------------- */
+
+.page-pad {
+  padding-left: var(--margin-x);
+  padding-right: var(--margin-x);
+}
+
+/* Mono meta line — labels, sources, section navigation */
+.meta {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: var(--step-small);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Primary action: flat signal amber rectangle */
+.action {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: #111214;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--step-body);
+  line-height: 1;
+  padding: 0.8em 1.35em;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition:
+    background 150ms ease,
+    transform 150ms var(--ease-out);
+}
+
+.action:hover {
+  background: var(--accent-bright);
+}
+
+.action:active {
+  transform: translateY(1px);
+}
+
+/* Secondary action: outlined quiet button */
+.action-quiet {
+  display: inline-block;
+  font-weight: 500;
+  font-size: var(--step-body);
+  color: var(--text-primary);
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.8em 1.35em;
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.action-quiet:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-bright);
+}

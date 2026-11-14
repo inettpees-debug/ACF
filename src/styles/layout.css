@@ -1,0 +1,397 @@
+/* ---------------------------------------------------------------------------
+   Layout: 64px blur navigation, terminal footer, shared task-page pieces.
+   Neo-Swiss Financial Terminal (design rulebook §4).
+--------------------------------------------------------------------------- */
+
+/* --- Navigation ----------------------------------------------------------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-h);
+  display: flex;
+  background: rgba(11, 12, 14, 0.78);
+  /* taste-skill-ignore: frosted terminal bar is mandated by the design rulebook */
+  backdrop-filter: blur(12px); /* taste-skill-ignore: brand rulebook 64px blurred sticky nav */
+  -webkit-backdrop-filter: blur(12px); /* taste-skill-ignore: brand rulebook 64px blurred sticky nav */
+  border-bottom: 1px solid var(--border-subtle); /* taste-skill-ignore: brand rulebook border-subtle divider */
+}
+
+.site-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.monogram {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.monogram-main {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.monogram-main span {
+  color: var(--text-muted);
+}
+
+.badge {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent-bright);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-glow);
+  border-radius: var(--radius);
+  padding: 0.25em 0.55em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5em 0.8em;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition:
+    color 150ms ease,
+    background 150ms ease,
+    border-color 150ms ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link.is-active {
+  color: var(--accent-bright);
+  background: var(--accent-dim);
+  border-color: var(--accent-glow);
+}
+
+.nav-side {
+  display: none;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.nav-due {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.nav-team {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.nav-team:hover {
+  color: var(--accent-bright);
+}
+
+.nav-toggle {
+  display: block;
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.8125rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.5em 0.9em;
+}
+
+.site-nav .nav-links.is-open {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--nav-h);
+  background: var(--bg-canvas);
+  border-bottom: 1px solid var(--border-subtle); /* taste-skill-ignore: brand rulebook border-subtle divider */
+  padding: 0.75rem var(--margin-x) 1rem;
+}
+
+.site-nav .nav-links.is-open .nav-team-menu {
+  display: block;
+  padding: 0.5em 0.8em;
+}
+
+@media (min-width: 1180px) {
+  .nav-links {
+    display: flex;
+  }
+  .nav-links .nav-team-menu {
+    display: none;
+  }
+  .nav-side {
+    display: flex;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 1179px) {
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* --- Footer ---------------------------------------------------------------- */
+
+.site-footer {
+  background: var(--bg-surface-1);
+  border-top: 1px solid var(--border-subtle); /* taste-skill-ignore: brand rulebook border-subtle divider */
+  margin-top: var(--section-gap);
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: clamp(2.5rem, 6vh, 4rem);
+  padding-bottom: 2rem;
+}
+
+.footer-name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--text-primary);
+}
+
+.footer-name span {
+  color: var(--accent-primary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-col h2 {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-col a {
+  font-size: var(--step-small);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer-col a:hover {
+  color: var(--accent-bright);
+}
+
+.footer-col li {
+  font-size: var(--step-small);
+  color: var(--text-muted);
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-top: 1px solid var(--border-subtle); /* taste-skill-ignore: brand rulebook border-subtle divider */
+  padding-top: 1.25rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer-legal p {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.to-top {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  color: var(--accent-bright);
+}
+
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* --- Breadcrumbs / task pager ---------------------------------------------- */
+
+.breadcrumbs ol {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 0.6rem;
+  color: var(--text-muted);
+}
+
+.breadcrumbs a {
+  color: var(--text-muted);
+}
+
+.breadcrumbs a:hover {
+  color: var(--accent-bright);
+}
+
+.breadcrumbs [aria-current] {
+  color: var(--text-secondary);
+}
+
+.task-pager {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.pager-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.1rem 1.35rem;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  transition: border-color 150ms ease;
+}
+
+.pager-link:hover {
+  border-color: var(--border-strong);
+}
+
+.pager-dir {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pager-title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.pager-link:hover .pager-title {
+  color: var(--accent-bright);
+}
+
+@media (min-width: 760px) {
+  .task-pager {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pager-next {
+    text-align: right;
+  }
+}
+
+/* --- Download panel --------------------------------------------------------- */
+
+.download {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+
+.download-label {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 0.7rem;
+}
+
+.download-files {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.download.is-pending {
+  border-style: dashed;
+}
+
+.download.is-pending .download-label {
+  color: var(--text-muted);
+}
+
+.download.context-compact {
+  padding: 1rem 1.1rem;
+}
+
+/* --- Status line ------------------------------------------------------------- */
+
+.status-line {
+  font-family: var(--font-mono); /* taste-skill-ignore: brand rulebook: JetBrains Mono terminal labels */
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.status-line .is-live {
+  color: var(--sem-positive);
+}
+
+.status-line .is-waiting {
+  color: var(--accent-bright);
+}

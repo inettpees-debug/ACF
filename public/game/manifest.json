@@ -1,0 +1,383 @@
+{
+  "logicalScreen": [
+    192,
+    108
+  ],
+  "integerScales": [
+    3,
+    5,
+    10
+  ],
+  "rendering": "nearest-neighbour",
+  "byte": {
+    "BYTE_confused": {
+      "src1x": "byte/1x/BYTE_confused.png",
+      "src10x": "byte/BYTE_confused.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_happy": {
+      "src1x": "byte/1x/BYTE_happy.png",
+      "src10x": "byte/BYTE_happy.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_neutral_and_talking_part_1": {
+      "src1x": "byte/1x/BYTE_neutral_and_talking_part_1.png",
+      "src10x": "byte/BYTE_neutral_and_talking_part_1.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_neutral_eyes_closed": {
+      "src1x": "byte/1x/BYTE_neutral_eyes_closed.png",
+      "src10x": "byte/BYTE_neutral_eyes_closed.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_relieved": {
+      "src1x": "byte/1x/BYTE_relieved.png",
+      "src10x": "byte/BYTE_relieved.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_shocked": {
+      "src1x": "byte/1x/BYTE_shocked.png",
+      "src10x": "byte/BYTE_shocked.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_talking_part_2": {
+      "src1x": "byte/1x/BYTE_talking_part_2.png",
+      "src10x": "byte/BYTE_talking_part_2.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    },
+    "BYTE_worried": {
+      "src1x": "byte/1x/BYTE_worried.png",
+      "src10x": "byte/BYTE_worried.png",
+      "size": [
+        60,
+        60
+      ],
+      "visibleBounds": [
+        14,
+        3,
+        52,
+        59
+      ],
+      "placement": {
+        "x": -4,
+        "y": 48
+      }
+    }
+  },
+  "backgrounds": {
+    "bg_boardroom": {
+      "src1x": "backgrounds/bg_boardroom_1x.png",
+      "src5x": "backgrounds/bg_boardroom_5x.png",
+      "size": [
+        192,
+        108
+      ],
+      "dialogueSafeArea": [
+        58,
+        74,
+        187,
+        104
+      ]
+    },
+    "bg_factory_closure": {
+      "src1x": "backgrounds/bg_factory_closure_1x.png",
+      "src5x": "backgrounds/bg_factory_closure_5x.png",
+      "size": [
+        192,
+        108
+      ],
+      "dialogueSafeArea": [
+        58,
+        74,
+        187,
+        104
+      ]
+    },
+    "bg_factory_emissions": {
+      "src1x": "backgrounds/bg_factory_emissions_1x.png",
+      "src5x": "backgrounds/bg_factory_emissions_5x.png",
+      "size": [
+        192,
+        108
+      ],
+      "dialogueSafeArea": [
+        58,
+        74,
+        187,
+        104
+      ]
+    },
+    "bg_office": {
+      "src1x": "backgrounds/bg_office_1x.png",
+      "src5x": "backgrounds/bg_office_5x.png",
+      "size": [
+        192,
+        108
+      ],
+      "dialogueSafeArea": [
+        58,
+        74,
+        187,
+        104
+      ]
+    }
+  },
+  "overlays": {
+    "boardroom_logo": {
+      "src": "endings/boardroom_logo.png",
+      "size": [
+        1312,
+        482
+      ],
+      "use": "title",
+      "rendering": "smooth (not grid art)"
+    },
+    "ending_winner": {
+      "src": "endings/ending_winner.png",
+      "size": [
+        1376,
+        560
+      ],
+      "use": "success ending",
+      "rendering": "smooth (not grid art)"
+    },
+    "ending_game-over": {
+      "src": "endings/ending_game-over.png",
+      "size": [
+        1376,
+        696
+      ],
+      "use": "firing ending",
+      "rendering": "smooth (not grid art)"
+    }
+  },
+  "thumbnails": {
+    "thumb_case_closure": {
+      "src1x": "ui/thumb_case_closure_1x.png",
+      "src4x": "ui/thumb_case_closure_4x.png",
+      "size": [
+        96,
+        64
+      ]
+    },
+    "thumb_case_emissions": {
+      "src1x": "ui/thumb_case_emissions_1x.png",
+      "src4x": "ui/thumb_case_emissions_4x.png",
+      "size": [
+        96,
+        64
+      ]
+    }
+  },
+  "icons": {
+    "continue": {
+      "src1x": "ui/icon_continue_1x.png",
+      "size": [
+        7,
+        4
+      ],
+      "display": "integer multiple of device pixels, always with a text label"
+    },
+    "download": {
+      "src1x": "ui/icon_download_1x.png",
+      "size": [
+        11,
+        11
+      ],
+      "display": "integer multiple of device pixels, always with a text label"
+    },
+    "exit": {
+      "src1x": "ui/icon_exit_1x.png",
+      "size": [
+        11,
+        11
+      ],
+      "display": "integer multiple of device pixels, always with a text label"
+    },
+    "pause": {
+      "src1x": "ui/icon_pause_1x.png",
+      "size": [
+        11,
+        11
+      ],
+      "display": "integer multiple of device pixels, always with a text label"
+    },
+    "restart": {
+      "src1x": "ui/icon_restart_1x.png",
+      "size": [
+        11,
+        11
+      ],
+      "display": "integer multiple of device pixels, always with a text label"
+    }
+  },
+  "fx": {
+    "briefcase_drop": {
+      "sheet": "fx/briefcase_drop_sheet_1x.png",
+      "json": "fx/briefcase_drop_sheet_1x.json",
+      "cell": [
+        40,
+        72
+      ],
+      "pivot_ground": [
+        20,
+        69
+      ],
+      "background": "#000000",
+      "placementOn192x108": [
+        76,
+        1
+      ],
+      "reducedMotionFrame": 8,
+      "frames": [
+        {
+          "i": 0,
+          "pose": "stretch",
+          "particles": false,
+          "ms": 70
+        },
+        {
+          "i": 1,
+          "pose": "stretch",
+          "particles": false,
+          "ms": 60
+        },
+        {
+          "i": 2,
+          "pose": "stretch",
+          "particles": false,
+          "ms": 50
+        },
+        {
+          "i": 3,
+          "pose": "stretch",
+          "particles": false,
+          "ms": 40
+        },
+        {
+          "i": 4,
+          "pose": "squash",
+          "particles": true,
+          "ms": 120
+        },
+        {
+          "i": 5,
+          "pose": "normal",
+          "particles": true,
+          "ms": 80
+        },
+        {
+          "i": 6,
+          "pose": "squash",
+          "particles": true,
+          "ms": 70
+        },
+        {
+          "i": 7,
+          "pose": "normal",
+          "particles": true,
+          "ms": 100
+        },
+        {
+          "i": 8,
+          "pose": "normal",
+          "particles": false,
+          "ms": 900
+        }
+      ],
+      "previewGif": "fx/briefcase_drop_6x.gif"
+    }
+  },
+  "palette": "palette/boardroom_palette.json"
+}

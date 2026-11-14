@@ -1,0 +1,112 @@
+{
+  "groups": {
+    "BYTE": {
+      "byte_ink": "#22222a",
+      "byte_suit_dk": "#2b2b35",
+      "byte_suit": "#2f2f3a",
+      "byte_lapel_dk": "#3e3851",
+      "byte_lapel": "#433b59",
+      "byte_hair_dk": "#482d29",
+      "byte_hair": "#603c31",
+      "byte_brow": "#6e3828",
+      "byte_hair_lt": "#784c41",
+      "byte_hair_hi": "#98684e",
+      "byte_lip": "#d66e4a",
+      "byte_skin_sh2": "#d9926a",
+      "byte_skin_sh": "#e99877",
+      "byte_cheek": "#f7c69e",
+      "byte_cheek2": "#f8c89f",
+      "byte_skin": "#fad9a7",
+      "byte_white": "#fefde5"
+    },
+    "SKY": {
+      "sky_hi": "#8fcfe0",
+      "sky": "#b4e1ec",
+      "sky_low": "#d8f1f2",
+      "cloud": "#ffffff",
+      "sun": "#ffdb70"
+    },
+    "CITY": {
+      "city_far": "#b9d3df",
+      "city": "#98b8cb",
+      "city_sh": "#7a9ab2",
+      "city_win": "#5f7f99"
+    },
+    "INTERIOR": {
+      "wall": "#fff3dc",
+      "wall_sh": "#f2dfbe",
+      "frame_sh": "#d5dcdc",
+      "wood_lt": "#e2b07a",
+      "wood": "#c18a57"
+    },
+    "NATURE": {
+      "leaf_lt": "#a8d672",
+      "leaf": "#68ad5c",
+      "leaf_dk": "#3f7d58",
+      "pot": "#d66e4a"
+    },
+    "INDUSTRY": {
+      "brick_lt": "#e09a7c",
+      "brick": "#c26e57",
+      "steel": "#aab4bb",
+      "asphalt": "#8d9097",
+      "smoke": "#ecebe4"
+    },
+    "BRAND": {
+      "teal": "#4f9e96",
+      "teal_dk": "#367a74",
+      "ui_orange": "#ffbd59",
+      "ui_yellow": "#ffdb70",
+      "ui_shadow": "#c9944a",
+      "black": "#000000",
+      "white": "#ffffff"
+    }
+  },
+  "master": [
+    "#22222a",
+    "#2b2b35",
+    "#2f2f3a",
+    "#3e3851",
+    "#433b59",
+    "#482d29",
+    "#603c31",
+    "#6e3828",
+    "#784c41",
+    "#98684e",
+    "#d66e4a",
+    "#d9926a",
+    "#e99877",
+    "#f7c69e",
+    "#f8c89f",
+    "#fad9a7",
+    "#fefde5",
+    "#8fcfe0",
+    "#b4e1ec",
+    "#d8f1f2",
+    "#ffffff",
+    "#ffdb70",
+    "#b9d3df",
+    "#98b8cb",
+    "#7a9ab2",
+    "#5f7f99",
+    "#fff3dc",
+    "#f2dfbe",
+    "#d5dcdc",
+    "#e2b07a",
+    "#c18a57",
+    "#a8d672",
+    "#68ad5c",
+    "#3f7d58",
+    "#e09a7c",
+    "#c26e57",
+    "#aab4bb",
+    "#8d9097",
+    "#ecebe4",
+    "#4f9e96",
+    "#367a74",
+    "#ffbd59",
+    "#c9944a",
+    "#000000"
+  ],
+  "count": 44
+}

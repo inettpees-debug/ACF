@@ -1,0 +1,482 @@
+@import url("/game/fonts/pixelify.css");
+
+/* ---------------------------------------------------------------------------
+   The Boardroom — the game's own visual identity.
+   Fonts: Pixelify Sans (self-hosted). UI accents from the supplied logo:
+   orange #ffbd59, yellow #ffdb70, deep accent #c9944a. Only this component uses
+   any of it; nothing leaks into the terminal-style website.
+--------------------------------------------------------------------------- */
+
+.boardroom {
+  --g-ink: #22222a;
+  --g-cream: #fff6e3;
+  --g-orange: #ffbd59;
+  --g-yellow: #ffdb70;
+  --g-shade: #c9944a;
+  --g-teal: #4f9e96;
+  --g-font: "Pixelify Sans", "Trebuchet MS", sans-serif;
+
+  background: var(--g-ink);
+  color: var(--g-cream);
+  /* Full-bleed cinema strip: break out of the page padding to the viewport
+     edges, so the pixel canvas gets the maximum integer scale. */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  font-family: var(--g-font);
+}
+
+/* Children other than the stage keep the page's content alignment */
+.boardroom-chrome,
+.game-situation,
+.game-dialog-area {
+  padding-inline: max(var(--margin-x), 1rem);
+  box-sizing: border-box;
+}
+
+/* --- Chrome bar ---------------------------------------------------------------- */
+
+.boardroom-chrome {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-id {
+  font-size: 1.35rem;
+  color: var(--g-orange);
+  line-height: 1.1;
+}
+
+.game-id span {
+  color: var(--g-shade);
+  font-size: 1.1rem;
+}
+
+.game-art-note {
+  font-size: 1rem;
+  color: var(--g-shade);
+}
+
+.game-art-error {
+  color: var(--g-yellow);
+}
+
+/* --- Situation strip -------------------------------------------------------------- */
+
+.game-situation {
+  font-size: 1.15rem;
+  line-height: 1.25;
+  color: var(--g-shade);
+}
+
+/* --- Stage: 192×108 canvas, pixelated, integer scales ------------------------------- */
+
+.game-stage-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.game-stage {
+  position: relative;
+  line-height: 0;
+}
+
+.game-stage canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+/* Overlay children are positioned in percentages of the 192×108 screen. */
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  line-height: 1.2;
+}
+
+/* Dialogue box: safe area x 58–187, y 74–104 (per asset manifest) */
+.game-dialog {
+  position: absolute;
+  left: 30.2%;
+  top: 68%;
+  width: 67.5%;
+  min-height: 27%;
+  background: rgba(24, 22, 20, 0.92);
+  border: 2px solid var(--g-shade);
+  padding: 0.5em 0.9em 0.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  cursor: pointer;
+}
+
+.game-speaker {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  color: var(--g-orange);
+  line-height: 1.1;
+}
+
+.game-line {
+  font-size: clamp(1rem, 1.9vw, 1.35rem);
+  line-height: 1.2;
+  color: var(--g-cream);
+  overflow-wrap: break-word;
+}
+
+.game-continue {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--g-font);
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  color: var(--g-yellow);
+  cursor: pointer;
+}
+
+.game-continue img {
+  image-rendering: pixelated;
+}
+
+.game-continue:hover,
+.game-continue:focus-visible {
+  color: var(--g-orange);
+}
+
+/* Controls: top-right strip over the scene */
+.game-controls {
+  position: absolute;
+  top: 3%;
+  right: 1.5%;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.game-controls button,
+.game-controls a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-family: var(--g-font);
+  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+  line-height: 1;
+  color: var(--g-cream);
+  background: rgba(24, 22, 20, 0.88);
+  border: 2px solid var(--g-shade);
+  padding: 0.3em 0.55em;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.game-controls img {
+  image-rendering: pixelated;
+}
+
+.game-controls button:hover:not(:disabled),
+.game-controls a:hover {
+  border-color: var(--g-orange);
+  color: var(--g-orange);
+}
+
+.game-controls button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* --- Full-stage overlays -------------------------------------------------------------- */
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.game-title-screen {
+  background: rgba(24, 22, 20, 0.25);
+}
+
+/* Supplied text graphics are smooth illustrations: scale smoothly, not grid art. */
+.game-logo {
+  width: min(72%, 660px);
+  height: auto;
+}
+
+.game-subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  color: var(--g-cream);
+  text-shadow: 2px 2px 0 rgba(24, 22, 20, 0.7); /* taste-skill-ignore: pixel game UI per user brief */
+}
+
+.game-over-img {
+  width: min(78%, 700px);
+  height: auto;
+}
+
+/* Winner card from the pack: presented on a cream backing so its black
+   pixel lettering stays readable on the dark panel. */
+.game-winner-img {
+  width: min(64%, 560px);
+  height: auto;
+  background: var(--g-cream);
+  border: 2px solid var(--g-orange);
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* --- Menus over the stage ------------------------------------------------------------ */
+
+.game-menu {
+  background: rgba(24, 22, 20, 0.88);
+}
+
+.game-menu-title {
+  font-size: clamp(1.15rem, 2.6vw, 1.8rem);
+  color: var(--g-yellow);
+}
+
+.game-menu-note {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  color: var(--g-shade);
+  max-width: 34ch;
+}
+
+.game-menu-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.game-cta {
+  font-family: var(--g-font);
+  font-size: 1.25rem;
+  line-height: 1;
+  background: var(--g-orange);
+  color: var(--g-ink);
+  border: 2px solid var(--g-orange);
+  padding: 0.45em 1em;
+  cursor: pointer;
+}
+
+.game-cta:hover {
+  background: var(--g-yellow);
+  border-color: var(--g-yellow);
+}
+
+.game-menu-row button:not(.game-cta) {
+  font-family: var(--g-font);
+  font-size: 1.25rem;
+  line-height: 1;
+  background: transparent;
+  color: var(--g-cream);
+  border: 2px solid var(--g-shade);
+  padding: 0.45em 1em;
+  cursor: pointer;
+}
+
+.game-menu-row button:not(.game-cta):hover {
+  border-color: var(--g-orange);
+  color: var(--g-orange);
+}
+
+/* --- Fired overlay ---------------------------------------------------------------- */
+
+.game-fired {
+  background: transparent; /* the black canvas + briefcase run beneath */
+  justify-content: flex-end;
+  padding-bottom: 6%;
+}
+
+.game-fired-grounds {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  color: var(--g-yellow);
+  max-width: 46ch;
+}
+
+.game-fired-actions {
+  padding-bottom: 0.5rem;
+}
+
+/* --- Panels below the stage --------------------------------------------------------- */
+
+.game-dialog-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 860px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.game-name-form {
+  border: 2px solid var(--g-shade);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.game-name-form label {
+  font-size: 1.15rem;
+  color: var(--g-orange);
+  line-height: 1.3;
+}
+
+.game-name-form input {
+  font-family: var(--g-font);
+  font-size: 1.35rem;
+  color: var(--g-cream);
+  background: rgba(24, 22, 20, 0.9);
+  border: 2px solid var(--g-shade);
+  padding: 0.4em 0.6em;
+}
+
+.game-name-form input:focus-visible {
+  outline: 2px solid var(--g-orange);
+  outline-offset: 2px;
+}
+
+/* --- Cards (cases, perspectives) --------------------------------------------------------- */
+
+.game-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 720px) {
+  .game-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .game-cards:not(.game-perspectives) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  text-align: left;
+  background: rgba(24, 22, 20, 0.9);
+  border: 2px solid var(--g-shade);
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.game-card:hover,
+.game-card:focus-visible {
+  border-color: var(--g-orange);
+}
+
+.game-card-thumb {
+  image-rendering: pixelated;
+  width: 96px;
+  height: 64px;
+}
+
+.game-card-label {
+  font-size: 1.2rem;
+  color: var(--g-cream);
+}
+
+.game-card-note {
+  font-size: 1.05rem;
+  color: var(--g-shade);
+}
+
+.game-card-cta {
+  font-size: 1.05rem;
+  color: var(--g-orange);
+}
+
+/* --- Case intro ----------------------------------------------------------------------------- */
+
+.game-case-intro {
+  border: 2px solid var(--g-shade);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.game-case-intro p {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+/* --- Choices ---------------------------------------------------------------------------------- */
+
+.game-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.game-choices .game-speaker {
+  color: var(--g-orange);
+}
+
+.game-choice {
+  font-family: var(--g-font);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-align: left;
+  background: rgba(24, 22, 20, 0.9);
+  color: var(--g-cream);
+  border: 2px solid var(--g-shade);
+  padding: 0.7em 0.9em;
+  cursor: pointer;
+}
+
+.game-choice:hover,
+.game-choice:focus-visible {
+  border-color: var(--g-orange);
+  color: var(--g-orange);
+}
+
+/* --- Ending ------------------------------------------------------------------------------------ */
+
+.game-ending {
+  border: 2px solid var(--g-orange);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+
+.game-ending-title {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  color: var(--g-yellow);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.game-ending-actions {
+  justify-content: flex-start;
+}
+
+/* --- Focus ------------------------------------------------------------------------------------- */
+
+.boardroom :focus-visible {
+  outline: 3px solid var(--g-yellow);
+  outline-offset: 2px;
+}

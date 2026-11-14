@@ -1,0 +1,51 @@
+GIMP Palette
+Name: The Boardroom
+Columns: 8
+#
+ 34  34  42	byte_ink
+ 43  43  53	byte_suit_dk
+ 47  47  58	byte_suit
+ 62  56  81	byte_lapel_dk
+ 67  59  89	byte_lapel
+ 72  45  41	byte_hair_dk
+ 96  60  49	byte_hair
+110  56  40	byte_brow
+120  76  65	byte_hair_lt
+152 104  78	byte_hair_hi
+214 110  74	byte_lip
+217 146 106	byte_skin_sh2
+233 152 119	byte_skin_sh
+247 198 158	byte_cheek
+248 200 159	byte_cheek2
+250 217 167	byte_skin
+254 253 229	byte_white
+143 207 224	sky_hi
+180 225 236	sky
+216 241 242	sky_low
+255 255 255	cloud
+255 219 112	sun
+185 211 223	city_far
+152 184 203	city
+122 154 178	city_sh
+ 95 127 153	city_win
+255 243 220	wall
+242 223 190	wall_sh
+213 220 220	frame_sh
+226 176 122	wood_lt
+193 138  87	wood
+168 214 114	leaf_lt
+104 173  92	leaf
+ 63 125  88	leaf_dk
+214 110  74	pot
+224 154 124	brick_lt
+194 110  87	brick
+170 180 187	steel
+141 144 151	asphalt
+236 235 228	smoke
+ 79 158 150	teal
+ 54 122 116	teal_dk
+255 189  89	ui_orange
+255 219 112	ui_yellow
+201 148  74	ui_shadow
+  0   0   0	black
+255 255 255	white
