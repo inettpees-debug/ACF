@@ -11,10 +11,10 @@ export default function Task1() {
       task={task}
       kpis={
         <>
-          <Kpi label="MARKET MODEL α / β" sub="MEAN ADJ. R² — AWAITING RESULTS" pending />
-          <Kpi label="AAR (t = 0)" sub="ANNOUNCEMENT DAY — AWAITING RESULTS" pending />
-          <Kpi label="CAAR [−1, +1]" sub="3-DAY WINDOW — AWAITING RESULTS" pending />
-          <Kpi label="CAAR [−2, +2]" sub="5-DAY WINDOW — AWAITING RESULTS" pending />
+          <Kpi label="MARKET MODEL α / β" sub="MEAN ADJ. R²" pending />
+          <Kpi label="AAR [0]" sub="ANNOUNCEMENT DAY" pending />
+          <Kpi label="CAAR [−1, +1]" sub="3-DAY WINDOW" pending />
+          <Kpi label="CAAR [−2, +2]" sub="5-DAY WINDOW" pending />
         </>
       }
       pager={{ next: { to: "/task-2", label: "02 · CEO Compensation" } }}
@@ -34,7 +34,7 @@ export default function Task1() {
           <div className="stage-main">
             <h3>CAAR trajectory · t−2 to t+2</h3>
             <div className="stage-slot" aria-label="Reserved space for the CAAR trajectory chart">
-              <p className="mono">CHART RESERVED — GLOWING TELEMETRY STYLE</p>
+              <p className="mono">AWAITING FINAL ESTIMATES</p>
               <p>
                 The cumulative average abnormal return curve around the
                 announcement, drawn as a 2px signal-amber line with hollow data

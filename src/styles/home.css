@@ -9,6 +9,12 @@
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--border-subtle); /* taste-skill-ignore: brand rulebook border-subtle divider */
+  /* Compose the first screen as a whole: hero fills the viewport under the
+     nav, content vertically centered, wave telemetry along the bottom. */
+  min-height: calc(100svh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: clamp(3rem, 8vh, 5.5rem);
   padding-bottom: clamp(3rem, 9vh, 6rem);
 }
@@ -79,10 +85,10 @@
 }
 
 .hero-statement {
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  font-weight: 600;
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  font-weight: 400;
   letter-spacing: -0.01em;
-  line-height: 1.25;
+  line-height: 1.3;
   max-width: 30ch;
   margin-top: clamp(1.25rem, 3vh, 2rem);
   color: var(--text-primary);
@@ -249,7 +255,7 @@
 }
 
 .module-status.status-pending {
-  color: var(--accent-bright);
+  color: var(--text-secondary);
 }
 
 .module-cta {

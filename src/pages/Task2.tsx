@@ -13,8 +13,8 @@ export default function Task2() {
         <>
           <Kpi label="SAMPLE" value="≈10,000" sub="CEOS · FIRMS OBSERVED MULTIPLE TIMES" />
           <Kpi label="PERIOD" value="2000–10" sub="FISCAL YEARS · EXECUCOMP" />
-          <Kpi label="BASELINE OLS β / γ" sub="PROFITABILITY · SIZE — AWAITING RESULTS" pending />
-          <Kpi label="PAY SENSITIVITY" sub="PER $1,000 MKVALT — AWAITING RESULTS" pending />
+          <Kpi label="BASELINE OLS β / γ" sub="PROFITABILITY · SIZE" pending />
+          <Kpi label="PAY SENSITIVITY" sub="PER $1,000 MKVALT" pending />
         </>
       }
       pager={{
@@ -40,7 +40,7 @@ export default function Task2() {
               className="stage-slot"
               aria-label="Reserved space for the regression comparison table"
             >
-              <p className="mono">ESTTAB-STYLE TABLE RESERVED</p>
+              <p className="mono">AWAITING FINAL ESTIMATES</p>
               <p>
                 Baseline OLS, winsorized (1st/99th percentile), pay-performance
                 sensitivity, the gender interaction model, and the
